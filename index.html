@@ -4,200 +4,203 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-    <title>Računanje Procenta</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/procenat.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="icon" href="perc.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="magi.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>Računanje Procenta</title>
+
 </head>
-
 <body>
-   <div id="navbar-placeholder"></div>
-   
+    <div id="navbar-placeholder"></div>
 
-    <br>
+<!-- Procenat -->
 
-    <div id="Glavni" class="container">
-        <div class="row text-warning bg-success bg-gradient">
-            <div id="divProcenat" class="container border  col-6 ">
-                <h1 class="h1 text-center text-light">Računanje Količine</h1>
-                <form action="">
-                    <label class="form-label" for="lblProc">Procenata:</label>
-                    <input class="form-control" id="KolProcenat" placeholder="Procenata" type="number">
-                    <label class="form-label" for=""> Ukupno:</label>
-                    <input class="form-control" id="KolUkupno" placeholder="Ukupno" type="number"
-                        onkeypress='return check(this,event);'>
-                    <label class="form-label" for=""> Rezultat:</label>
-                    <input class="form-control" id="KolKolicina" placeholder="Količina" type="number">
-                    <br>
-                    <button type="button" onclick="IzracKolicine()"
-                        class="btn btn-center bg-info text-warning">Izračunaj</button>
+<div id="Glavni" class="container-fluid offset-1 ">
+    <div class="row g-5">
 
-                </form>
-            </div>
+        <div id="divProcenat" class="col-md-5">
+            <h2>Računanje Količine</h2>
+            <form>
+                <label for="KolProcenat">Procenata:</label>
+                <input class="form-control" id="KolProcenat" placeholder="Procenata" type="number">
 
-            <div class="container border col-6">
-                <h1 class="h1 text-center text-light">Računanje Procenta</h1>
-                <form action="">
+                <label for="KolUkupno">Ukupno:</label>
+                <input class="form-control" id="KolUkupno" placeholder="Ukupno" type="number"
+                    onkeypress='return check(this,event);'>
 
-                    <label class="form-label" for="lblUku">Ukupno:</label>
-                    <input class="form-control" id="ProcUkupno" placeholder="Ukupno" type="number"
-                        onkeypress='return check(this,event);'>
-                    <label class="form-label" for=""> Količina</label>
-                    <input class="form-control" id="ProcKolicina" placeholder="Količina" type="number"
-                        onkeypress='return check(this,event);'>
+                <label for="KolKolicina">Rezultat:</label>
+                <input class="form-control" id="KolKolicina" placeholder="Količina" type="number">
 
-                    <label class="form-label" for=""> Rezultat:</label>
-                    <input class="form-control" id="ProcProcenat" placeholder="Procenata" type="number">
-                    <br>
-                    <button type="button" class="btn bg-danger text-warning btn-center"
-                        id="procIzracun">Izračunaj</button>
-                    <br><br>
-                </form>
-            </div>
-
-            <!--end procenat-->
+                <button  class="btn btn-warning" type="button "  id="kolIzracun" >Izračunaj</button>
+            </form>
         </div>
+
+        <div class="col-md-5">
+            <h2>Računanje Procenta</h2>
+            <form>
+                <label for="ProcUkupno">Ukupno:</label>
+                <input class="form-control" id="ProcUkupno" placeholder="Ukupno" type="number"
+                    onkeypress='return check(this,event);'>
+
+                <label for="ProcKolicina">Količina:</label>
+                <input class="form-control" id="ProcKolicina" placeholder="Količina" type="number"
+                    onkeypress='return check(this,event);'>
+
+                <label for="ProcProcenat">Rezultat:</label>
+                <input class="form-control" id="ProcProcenat" placeholder="Procenata" type="number">
+
+                <button class="btn btn-info" type="button" id="procIzracun">Izračunaj</button>
+            </form>
+        </div>
+
     </div>
+</div>
+
+<!-- Kamata -->
 
     <br>
-    <div class="container border bg-warning ">
-
-        <h3 class="h2 text-center ">Računanje Kamate Tuženih po danima</h3>
+    <div class="container border rounded text-white mb-3" style="background-color: #7494c9;">
+        <h3 class="text-center mb-3 mt-3">Računanje kamate tuženih po danima</h3>
     </div>
-
-    <p></p>
-
-    <!--   Procenat tuženih-->
-    <div id="divkamata" class="container bg-info">
-        <div class="row">
-            <div style="height:auto" class="container col-sm">
-                <label class="form-label text-warning" for="">Dana:</label>
-                <input class="form-control" style="font-weight: bold;height: 2.4em;width: 5em;" type="text"
-                    id="ukupnodana" placeholder="Dana">
+    <br>
+    <div id="divkamata" class="container">
+        <div class="row g-3 align-items-end">
+            <div class="col-sm">
+                <label class="form-label" for="">Dana:</label>
+                <input class="form-control" type="text" id="ukupnodana" placeholder="Dana">
             </div>
-            <div style="height:auto" class="container col-sm">
-                <label class="form-label text-warning" for="">Dospijeće:</label>
-                <input class="date form-control" type="text" id="dospijece"
-                    class=" bold date form-control tuzeniMarginTop" />
-
+            <div class="col-sm">
+                <label class="form-label" for="">Dospijeće:</label>
+                <input class="date form-control" type="text" id="dospijece" />
             </div>
-            <div style="height:auto" class="container col-sm">
-                <label class="form-label text-warning" for="">Kašnjenje:</label>
+            <div class="col-sm">
+                <label class="form-label" for="">Kašnjenje:</label>
                 <input type="text" id="kasnjenje" class="date form-control" />
             </div>
-            <div style="height:auto" class="container col-sm">
-                <label class="form-label text-warning" for="">Dug:</label>
-                <input class="form-control" type="text" id="dug" placeholder="Dug" value="100.00"
-                    onkeypress='return check(this,event);'>
+            <div class="col-sm">
+                <label class="form-label" for="">Dug:</label>
+                <input class="form-control" type="text" id="dug" placeholder="Dug" value="100.00">
             </div>
-            <div style="height:auto" class="container col-sm">
+            <div class="col-sm">
                 <label class="form-label" for="">Kamata:</label>
-                <input class="form-control" type="text" value="0.03" id="kamata" ;
-                    onkeypress='return check(this,event);'>
+                <input class="form-control" type="text" value="0.03" id="kamata">
             </div>
-
-            <div style="height:auto" class="container col-sm">
-                <button onclick="KamataPoDanima()" class="btn bg-danger text-warning rez">Izračunaj</button>
+            <div class="col-sm d-flex flex-column">
+                <button onclick="KamataPoDanima()" class="btn mt-auto">Izračunaj</button>
             </div>
-            <div style="height:auto" class="container col-sm">
-                <input class="form-control rez" type="text" id="rezultatKamate" placeholder="Rezultat">
-                <br>
+            <div class="col-sm">
+                <label class="form-label" for="">Rezultat:</label>
+                <input class="form-control" type="text" id="rezultatKamate" placeholder="Rezultat">
             </div>
         </div>
-
     </div>
-    <script type="text/javascript">
-        $(".date").datepicker({
-            format: "MM d yyyy",
-            todayHighlight: true,
-            autoclose: true
+
+    <script>
+        flatpickr("#dospijece", {
+            dateFormat: "d.m.Y",      // naš format datuma
+            altInput: true,           // lijep izgled inputa
+            altFormat: "d.m.Y",       // prikaz na inputu
+            allowInput: true,         // dozvoli ručni unos
+            locale: {
+                weekdays: {
+                    shorthand: ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"],
+                    longhand: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+                },
+                months: {
+                    shorthand: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Avg", "Sep", "Okt", "Nov", "Dec"],
+                    longhand: ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]
+                }
+            },
+            minDate: "01.01.2000",   // možeš ograničiti minimalni datum
+            maxDate: "31.12.2030",   // maksimalni datum
+            defaultDate: "today",    // početni datum je danas
         });
 
-    </script>
-    <script type="text/javascript">
-        $(".date").datepicker({
-            autoclose: true,
-            format: "MM d yyyy",
-            todayHighlight: true,
-            autoclose: true
+        flatpickr("#kasnjenje", {
+            dateFormat: "d.m.Y",      // naš format datuma
+            altInput: true,           // lijep izgled inputa
+            altFormat: "d.m.Y",       // prikaz na inputu
+            allowInput: true,         // dozvoli ručni unos
+            locale: {
+                weekdays: {
+                    shorthand: ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"],
+                    longhand: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+                },
+                months: {
+                    shorthand: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Avg", "Sep", "Okt", "Nov", "Dec"],
+                    longhand: ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]
+                }
+            },
+            minDate: "01.01.1980",   // možeš ograničiti minimalni datum
+            maxDate: "31.12.2030",   // maksimalni datum
+            defaultDate: "today",    // početni datum je danas
         });
-
     </script>
 
     <!--   starost zaposlenih-->
     <br>
-    <div id="DrugiGlavni" class="container">
-        <div class="row" id="rowDrugiLijevi">
+    
+<div id="DrugiGlavni" class="container">
+    <div class="row g-4">
 
-            <div id="divdrugiLijevi" class="container-fluid  col-4 text-warning bg-warning bg-gradient">
-                <h1 class="text-center text-light">Starost</h1>
+        <div id="divdrugiLijevi" class="col-4 text-dark">
+            <h1 class="text-center">Starost</h1>
+            <input class="form-control" id="star_manje30" placeholder="30" type="text" disabled>
+            <input class="form-control" id="star_ukupno_31_40" placeholder="31-40" type="text" disabled>
+            <input class="form-control" id="star_41_50" placeholder="41-50" type="text" disabled>
+            <input class="form-control" id="star_51_60" placeholder="51-60" type="text" disabled>
+            <input class="form-control" id="star_vece60" placeholder=">61" type="text" disabled>
+            <input class="form-control" id="star_ukupno" placeholder="UKUPNO" type="text" disabled>
+        </div>
 
+        <div id="divdrugiSrednji" class="col-4 text-dark">
+            <h1 class="text-center">Broj</h1>
+            <input class="form-control" id="zap_manje30" type="number" value="5">
+            <input class="form-control" id="zap_31_40" type="number" value="5">
+            <input class="form-control" id="zap_41_50" type="number" value="5">
+            <input class="form-control" id="zap_51_60" type="number" value="5">
+            <input class="form-control" id="zap_vece60" type="number" value="5">
+            <input class="form-control" id="zap_ukupno" placeholder="UKUPNO" type="text" disabled>
+            <button type="button" onclick="IzracunZaposlenih()" class="btn bg-info text-white mt-2">Izračunaj</button>
+        </div>
 
-                <br><br>
-                <input class="form-control" id="star_manje30" placeholder="30" type="label" disabled>
-                <br>
-                <input class="form-control" id="star_ukupno_31_40" placeholder="31-40" type="label" disabled>
-                <br>
-                <input class="form-control" id="star_41_50" placeholder="41-50" type="label" disabled>
-                <br>
-                <input class="form-control" id="star_51_60" placeholder="51-60" type="label" disabled>
-                <br>
-                <input class="form-control" id="star_vece60" placeholder=">61" type="label" disabled>
-                <br>
-                <input class="form-control" id="star_ukupno" placeholder="UKUPNO" type="label" disabled>
-                <br><br> <br>
-            </div>
-
-            <div id="divdrugiSrednji" class="container  col-4 text-warning bg-danger bg-gradient">
-                <h1 class="text-center text-light">Broj</h1>
-
-                <br><br>
-                <input class="form-control" id="zap_manje30" type="number" value="5">
-                <br>
-                <input class="form-control" id="zap_31_40" type="number" value="5">
-                <br>
-                <input class="form-control" id="zap_41_50" type="number" value="5">
-                <br>
-                <input class="form-control" id="zap_51_60" type="number" value="5">
-                <br>
-                <input class="form-control" id="zap_vece60" type="number" value="5">
-                <br>
-                <input class="form-control" id="zap_ukupno" placeholder="UKUPNO" type="text" disabled>
-                <br>
-                <button type="button" onclick="IzracunZaposlenih()"
-                    class="btn bg-info text-white btn-center">Izračunaj</button> <br> <br>
-
-            </div>
-
-            <div id="divdrugiDesni" class="container-fluid  col-4 text-warning bg-info bg-gradient">
-                <h1 class="text-center text-light">Postotak </h1> <br><br>
-
-                <input class="form-control" id="post_manje30" type="text" disabled>
-                <br>
-                <input class="form-control" id="post_31_40" type="text" disabled>
-                <br>
-                <input class="form-control" id="post_41_50" type="text" disabled>
-                <br>
-                <input class="form-control" id="post_51_60" type="text" disabled>
-                <br>
-                <input class="form-control" id="post_vece60" type="text" disabled>
-                <br>
-                <input class="form-control" id="post_ukupno" placeholder="UKUPNO" type="text" disabled>
-                <br>
-                <button type="button" onclick="PostotakZaposlenih()" class="btn bg-danger text-white">Postotak</button>
-                <br><br>
-            </div>
+        <div id="divdrugiDesni" class="col-4 text-dark">
+            <h1 class="text-center">Postotak</h1>
+            <input class="form-control" id="post_manje30" type="text" disabled>
+            <input class="form-control" id="post_31_40" type="text" disabled>
+            <input class="form-control" id="post_41_50" type="text" disabled>
+            <input class="form-control" id="post_51_60" type="text" disabled>
+            <input class="form-control" id="post_vece60" type="text" disabled>
+            <input class="form-control" id="post_ukupno" placeholder="UKUPNO" type="text" disabled>
+            <button type="button" onclick="PostotakZaposlenih()" class="btn bg-danger text-white mt-2">Postotak</button>
         </div>
     </div>
+</div>
     <br>
-    <script src="script.js"></script>
-    <script src="procenat.js"></script>
+
+<div  class="container rounded"  style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; background:#a0e0c8"
+    class="col-12   rounded ">
+    <br>
+    <h3 class="text-center text-primary">Copyright &copy by Matejko Team</h3><br>
+</div>
+<br>
+
+
+    <!--  Skripte  -->
+    <script src="./script/script.js"></script>
+    <script src="./script/procenat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

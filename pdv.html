@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/pdv.css">
 <link rel="icon" href="euro.png" type="image/x-icon">
     <title>Pdv i Kursna Lista</title>
 </head>
@@ -14,14 +15,20 @@
 <body>
     <br>
     <div id="navbar-placeholder"></div>
-
-    <h1 class="container text-center  mt-5 mb-5 me-5s float-left">Račun Pdv</h1>
-
+<br>
+    <div class="form-control container " style="-webkit-box-shadow: 17px 17px 48px 23px rgba(182,214,193,1);
+    -moz-box-shadow: 17px 17px 48px 23px rgba(182,214,193,1);
+    box-shadow: 17px 17px 48px 23px rgba(182,214,193,1);">
+        <h1 class="container text-center mt-4 text-info fw-bold fst-italic  rounded w-25">Izračun Pdv</h1>
+    </div>
+<br>
     <div class="container ">
+        
         <div class="row">
-            <div class="col-6 bg-info border border-3 border-white"> <!--   Minus -->
+            <div class="col-6 lijevi border border-3 border-white"> <!--   Minus -->
                 <div class="row">
-                    <h3 class="text-center">Oduzmi PDV</h3>
+                    
+                    <h3 class="text-center fw-bold mt-3 mb-3">Oduzmi PDV</h3>
                     <div class="col-3">
                         <input id="inpOduzmipdvVrijednost" class="form-control " type="text" style="font-size: 1.3em;"
                             placeholder="Iznos">
@@ -70,16 +77,16 @@
                 </div>
 
             </div>
-            <div class="col-6 bg-danger  border border-3 border-white"> <!--   Plus -->
+            <div class="col-6 bg-danger  border border-3 border-white desni" > <!--   Plus -->
 
                 <div class="row">
-                    <h3 class="text-center text-white">Dodaj PDV</h3>
+                    <h3 class="text-center text-danger fw-bold mt-3 mb-3">Dodaj PDV</h3>
                     <div class="col-3">
                         <input id="inpDodajpdvVrijednost" class="form-control " type="text" style="font-size: 1.3em;"
                             placeholder="Iznos">
                     </div>
                     <div class="col-1">
-                        <h3 class="text-white">+</h3>
+                        <h3 class="text-dark">+</h3>
                     </div>
 
                     <div class="col-2">
@@ -88,7 +95,7 @@
                     </div>
 
                     <div class="col-1">
-                        <h3 class="text-white mt-1">%</h3>
+                        <h3 class="text-dark mt-1">%</h3>
                     </div>
 
                     <div class="col">
@@ -100,7 +107,7 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <div class="col-6">
+                        <div class="col-6 ">
                             <table class="table  table-borderless " style="font-size: larger;text-align: center;">
                                 <thead>
                                     <tr>
@@ -113,8 +120,8 @@
                                 <tbody>
                                     <tr>
 
-                                        <td class="text-white fw-bold" id="tdSaPdv"></td>
-                                        <td class="text-white fw-bold" id="tdIznosSaPdv"></td>
+                                        <td class="text-success fw-bold" id="tdSaPdv"></td>
+                                        <td class="text-success fw-bold" id="tdIznosSaPdv"></td>
 
                                     </tr>
                                 </tbody>
@@ -193,77 +200,17 @@ box-shadow: 17px 17px 48px 23px rgba(182,214,193,1);">
 
     </form>
 
-    <p id="test"></p>
+    <div class="container rounded"
+        style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; background:#a0e0c8"
+        class="col-12    ">
+        <br>
+        <h3 class="text-center text-primary">Copyright &copy by Matejko Team</h3><br>
+    </div>
+    <br>
 
-
-
-
-    <!-- <script>
-
-        const inpOduzmipdvVrijednost = document.getElementById(
-            'inpOduzmipdvVrijednost'
-        );
-        const inpDodajpdvVrijednost = document.getElementById('inpDodajpdvVrijednost');
-        const btnOduzmipdv = document.getElementById('btnOduzmipdv');
-        const btnDodajpdv = document.getElementById('btnDodajpdv');
-        const minusPdvPostotak = document.getElementById('minusPdvPostotak');
-        const plusPdvPostotak = document.getElementById('plusPdvPostotak');
-        const tdBezPdv = document.getElementById('tdBezPdv');
-        const tdIznosBezpdv = document.getElementById('tdIznosBezpdv');
-        const tdSaPdv = document.getElementById('tdSaPdv');
-        const tdIznosSaPdv = document.getElementById('tdIznosSaPdv');
-
-        function oduzmiPdv() {
-            const vrijednost = parseFloat(inpOduzmipdvVrijednost.value);
-            const procenat = parseFloat(minusPdvPostotak.value);
-
-            if (isNaN(vrijednost) || isNaN(procenat)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Pogrešan unos!!',
-                    text: 'Molim unesite brojčane vrijednosti!',
-                });
-                inpOduzmipdvVrijednost.value = '';
-                minusPdvPostotak.value = '17';
-                return;
-            }
-
-            const pdv = vrijednost / (1 + procenat / 100);
-            tdBezPdv.textContent = pdv.toFixed(2);
-            tdIznosBezpdv.textContent = (vrijednost - pdv).toFixed(2);
-        }
-
-        btnOduzmipdv.addEventListener('click', oduzmiPdv);
-
-        function dodajPdv() {
-
-            const vrijednost = parseFloat(inpDodajpdvVrijednost.value);
-            const procenat = parseFloat(plusPdvPostotak.value);
-            const pdv = vrijednost * (procenat / 100);
-            if (isNaN(vrijednost) || isNaN(procenat)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Pogrešan unos!!',
-                    text: 'Molim unesite brojčane vrijednosti!',
-                });
-
-                tdIznosSaPdv.textContent = pdv.toFixed(2);
-                inpDodajpdvVrijednost.value = '';
-                plusPdvPostotak.value = '17';
-                return;
-            }
-
-            tdSaPdv.textContent = +inpDodajpdvVrijednost.value + +pdv.toFixed(2);
-            tdIznosSaPdv.textContent = pdv.toFixed(2);
-        }
-
-        btnDodajpdv.addEventListener('click', dodajPdv);
-
-    </script> -->
-
-    <script src="script.js"></script>
-    <script src="pdv.js"></script>
-    <script src="currency.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/pdv.js"></script>
+    <script src="./script/currency.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

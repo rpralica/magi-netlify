@@ -1,0 +1,172 @@
+/* Glavni kontejner */
+#Glavni {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Kolone sa formama */
+#Glavni .col-md-5 {
+    padding: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+/* Razmak između kolona */
+.row.g-5 {
+    gap: 1rem;
+}
+
+/* Gradijenti i boje */
+#divProcenat {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+#Glavni .col-md-5:nth-child(2) {
+    background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+    color: #333;
+}
+
+/* Naslovi */
+#Glavni h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Input polja */
+#Glavni input.form-control {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+}
+
+#Glavni input.form-control:focus {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: scale(1.02);
+}
+
+/* Dugmad */
+#Glavni button.btn {
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #333;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+#divProcenat button {
+    background: linear-gradient(to right, #ffb347, #ffcc33);
+}
+
+#Glavni .col-md-5:nth-child(2) button {
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+}
+
+#Glavni button.btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* Glavni container */
+    #divkamata {
+        background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Input polja */
+    #divkamata .form-control {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        height: 2.4em;
+        font-weight: 500;
+    }
+
+    /* Labels */
+    #divkamata .form-label {
+        color: #333;
+        font-weight: 600;
+    }
+
+    /* Dugme */
+    #divkamata .btn {
+        background: linear-gradient(to right, #ffb347, #ffcc33);
+        color: #fff;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    #divkamata .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Razmak između kolona ako treba */
+    #divkamata .row > .col-sm {
+        margin-bottom: 0.75rem;
+    }
+
+    /* Glavni container sekcije */
+    #DrugiGlavni {
+        margin-top: 2rem;
+    }
+
+    #DrugiGlavni .col-4 {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Lijevi container – Starost */
+    #divdrugiLijevi {
+        background: linear-gradient(135deg, #f9f9f9, #d9f0ff);
+        color: #333;
+    }
+
+    /* Srednji container – Broj */
+    #divdrugiSrednji {
+        background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+        color: #333;
+    }
+
+    /* Desni container – Postotak */
+    #divdrugiDesni {
+        background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+        color: #333;
+    }
+
+    /* Input polja */
+    #DrugiGlavni .form-control {
+        margin-bottom: 0.75rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        height: 2.4em;
+        font-weight: 500;
+    }
+
+    /* Naslovi */
+    #DrugiGlavni h1 {
+        font-size: 1.8rem;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    }
+
+    /* Dugmad */
+    #DrugiGlavni .btn {
+        width: 100%;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    #DrugiGlavni .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Razmak između kolona */
+    #DrugiGlavni .row > .col-4 {
+        margin-bottom: 1rem;
+    }

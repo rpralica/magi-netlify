@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"
-    rel="stylesheet" id="bootstrap-css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <title>Mjeseci i Godine</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
-    rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 </head>
-<link rel="icon" href="cal.png" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="mjeseci.css">
+<link rel="icon" href="./img/cal.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./style/style.css">
+<link rel="stylesheet" type="text/css" href="./style/mjeseci.css">
+
 <body class="container" style="background:whitesmoke">
 
   <div id="navbar-placeholder"></div>
-  <h1 id="H1GodMjes" class="bg-info">Godine i mjeseci</h1>
+  <h1 id="H1GodMjes" class="bg-info rounded">Godine i mjeseci</h1>
   <br> <br>
-  <div class="container bg-info text-white ">
+  <div  style="background-color: #5bb7c4;"   class="container text-white rounded">
     <br>
     <label class="form-label" id="lblGodine" for="">Godine</label>
     <input class="form-control bold" id="upisGodine" value="0" type="number">
@@ -42,34 +39,31 @@
     <label class="form-label" for="">Mjeseci</label>
     <input class="form-control bold" id="rezMjes" type="text">
     <br>
- </div>
+  </div>
 
- <br>
-  <div class="container izracun">
-    
-    <label class="form-label text-center">Izračun Razlike između Datuma</label>
+  <br>
+  <div style="background-color: #b2ebf2;" class="container izracun rounded">
+
+
+    <!-- Razlike datuma -->
+
+
+    <label class="form-label text-center ">Izračun Razlike između Datuma</label>
     <p></p>
   </div>
   <br>
   <section>
     <main>
-      <div id="glavni" class="container bg-smoke">
+      <div style="background-color: #e0f7fa;" id="glavni" class="container bg-smoke">
         <div class="date-input">
           <div class="birth">
             <div class="title">
               <label style="font-weight:bold;color: blue;font-size: 1.1em">Početni Datum:</label>
             </div>
             <div class="field">
-              <input type="text" id="pocetni" placeholder="Kliknite ovdje " 
-                class="date form-control" style="width: 200px; margin-left: 1em" />
+              <input type="text" id="pocetni" placeholder="Kliknite ovdje " class="date form-control"
+                style="width: 200px; margin-left: 1em" />
               <br>
-              <script type="text/javascript">
-                $(".date").datepicker(
-                  {
-                    format: "d MM yyyy",
-                    autoclose: true,
-                  });
-              </script>
             </div>
           </div>
           <div class="date-now">
@@ -80,19 +74,12 @@
               <input type="text" id="krajnji" placeholder="Kliknite ovdje" class="date form-control"
                 style="width: 200px;margin-left: 1em" />
               <br> <br>
-              <script type="text/javascript">
-                $(".date").datepicker(
-                  {
-                    format: "d MM yyyy",
-                    autoclose: true,
-                  });
-              </script>
-              <script type="text/javascript">
-              </script>
+
+
             </div>
           </div>
           <div class="btn">
-            <button class="btn-lg btn-success" type="button">Izračunaj</button>
+            <button class="btn btn-lg btn-info" type="button">Izračunaj</button>
           </div>
         </div>
         <br> <br>
@@ -119,10 +106,60 @@
   </section>
 
   <script>
-    $('#pocetni').val(new Date().toJSON().slice(0, 10));
-    $('#krajnji').val(new Date().toISOString().slice(0, 10));
+    flatpickr("#pocetni", {
+      dateFormat: "d.m.Y",      // naš format datuma
+      altInput: true,           // lijep izgled inputa
+      altFormat: "d.m.Y",       // prikaz na inputu
+      allowInput: true,         // dozvoli ručni unos
+      locale: {
+        weekdays: {
+          shorthand: ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"],
+          longhand: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+        },
+        months: {
+          shorthand: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Avg", "Sep", "Okt", "Nov", "Dec"],
+          longhand: ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]
+        }
+      },
+      minDate: "01.01.2000",   // možeš ograničiti minimalni datum
+      maxDate: "31.12.2030",   // maksimalni datum
+      defaultDate: "today",    // početni datum je danas
+    });
+
+    flatpickr("#krajnji", {
+      dateFormat: "d.m.Y",      // naš format datuma
+      altInput: true,           // lijep izgled inputa
+      altFormat: "d.m.Y",       // prikaz na inputu
+      allowInput: true,         // dozvoli ručni unos
+      locale: {
+        weekdays: {
+          shorthand: ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"],
+          longhand: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+        },
+        months: {
+          shorthand: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Avg", "Sep", "Okt", "Nov", "Dec"],
+          longhand: ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]
+        }
+      },
+      minDate: "01.01.1980",   // možeš ograničiti minimalni datum
+      maxDate: "31.12.2030",   // maksimalni datum
+      defaultDate: "today",    // početni datum je danas
+    });
   </script>
-  <script  src="script.js"></script>
-  <script src="mjeseci.js"></script>
+
+<br><br>
+  <div
+    style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; background:#a0e0c8"
+    class="col-12   rounded ">
+    <br>
+    <h3 class="text-center text-primary">Copyright &copy by Matejko Team</h3><br>
+  </div>
+
+  <script src="./script/script.js"></script>
+  <script src="./script/mjeseci.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

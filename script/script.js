@@ -1,6 +1,6 @@
 // Funkcija za učitavanje i aktiviranje navigacije
 function loadAndActivateNavbar() {
-  fetch('navbar.html')
+  fetch('../component/navbar.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;

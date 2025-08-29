@@ -215,15 +215,15 @@ section main .container .result-input .box-result .day {
 
 @font-face {
     font-family: "Poppins-ExtraLight";
-    src: url("Poppins-ExtraLight.ttf");
+    src: url("../fonts/Poppins-ExtraLight.ttf");
 }
 @font-face {
     font-family: "Poppins-Light";
-    src: url("Poppins-Light.ttf");
+    src: url("../fonts/Poppins-Light.ttf");
 }
 @font-face {
     font-family: "Poppins-Regular";
-    src: url("Poppins-Regular.ttf");
+    src: url("../fonts/Poppins-Regular.ttf");
 }
 
 
